@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List</h1>
+      <button id="filterButton">Filtrar Tarefas</button>
+    </header>
+    <main>
+      <dialog id="editTaskDialog">
+        <form id="editTaskForm" onsubmit="editTask(event)">
+          <input type="text" id="id" name="id" hidden>
+          <input type="text" name="title" id="title" required placeholder="Informe o título da tarefa" />
+          <textarea id="description" name="description" required placeholder="Informe a descrição da tarefa"></textarea>
+          <div>
+            <button type="submit">Editar Tarefa</button>
+            <button type="button" onclick="closeDialog()">Cancelar</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog id="filterDialog">
+        <form id="filterForm">
+          <label for="filterTitle">Título da Tarefa:</label>
+          <input type="text" id="filterTitle" name="filterTitle" required />
+          <button type="submit">Filtrar</button>
+        </form>
+      </dialog>
+
+      <form id="taskForm" onsubmit="addTask(event)">
+        <input type="text" name="title" id="title" required placeholder="Informe o título da tarefa" />
+        <textarea id="description" name="description" required placeholder="Informe a descrição da tarefa"></textarea>
+        <button type="submit">Salvar Tarefa</button>
+      </form>
+
+      
+
+      <ul id="taskList"></ul>
+    </main>
+    <footer>&copy; 2024 Todo List</footer>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
